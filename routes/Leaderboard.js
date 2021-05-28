@@ -11,7 +11,7 @@ leadbRouter.get("/", (req, res) => {
 
 
 leadbRouter.get("/leaderboard", (req, res) => {
-    Leadb.find()
+    Leadb.find().sort( {score: -1} )
         .then((entries) => res.json(entries))
         .catch((err) => res.json(err));
 });
