@@ -17,6 +17,7 @@ leadbRouter.get("/leaderboard", (req, res) => {
 });
 
 leadbRouter.post('/leaderboard', (req, res) => {
+    console.log(req.body)
     Leadb
         .create(req.body)
         .then((entry) => res.json(entry))
